@@ -5,6 +5,7 @@
 `define START_ADDR      `WORD_LEN'b0
 `define BUBBLE          `WORD_LEN'h00000013     // [ADDI x0,x0,0] = BUBBLE
 `define UNIMP           `WORD_LEN'hc0001073     // [CSRRW x0, cycle, x0]
+`define PROGRAM_END     `WORD_LEN'h00003ff0     // 16368
 `define ADDR_LEN        5
 `define CSR_ADDR_LEN    12
 `define VLEN            128
@@ -34,10 +35,10 @@
 `define BR_BGEU         `EXE_FUN_LEN'd16
 `define ALU_JALR        `EXE_FUN_LEN'd17
 `define ALU_COPY1       `EXE_FUN_LEN'd18
-`define ALU_VADDVV      `EXE_FUN_LEN'd19
-`define VSET            `EXE_FUN_LEN'd20
-`define ALU_PCBT        `EXE_FUN_LEN'd21
-
+`define ALU_MUL         `EXE_FUN_LEN'd19
+`define ALU_MULH        `EXE_FUN_LEN'd20
+`define ALU_MULHSU      `EXE_FUN_LEN'd21
+`define ALU_MULHU       `EXE_FUN_LEN'd22
 
 `define OP1_LEN         2
 `define OP1_X           `OP1_LEN'd0

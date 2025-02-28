@@ -1,0 +1,58 @@
+file2.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:   fe010113                addi    x2,x2,-32
+   4:   00112e23                sw      x1,28(x2)
+   8:   00812c23                sw      x8,24(x2)
+   c:   02010413                addi    x8,x2,32
+  10:   00600793                addi    x15,x0,6
+  14:   fef42623                sw      x15,-20(x8)
+  18:   fec42503                lw      x10,-20(x8)
+  1c:   00000097                auipc   x1,0x0
+  20:   040080e7                jalr    x1,40(x1) # 1c <main+0x1c>  //jmp .L4
+  24:   fea42423                sw      x10,-24(x8)
+  28:   00000793                addi    x15,x0,0
+  2c:   00078513                addi    x10,x15,0
+  30:   01c12083                lw      x1,28(x2)
+  34:   01812403                lw      x8,24(x2)
+  38:   02010113                addi    x2,x2,32
+  3c:   00008067                jalr    x0,0(x1)
+
+00000040 <fibb>:
+  40:   fe010113                addi    x2,x2,-32
+  44:   00112e23                sw      x1,28(x2)
+  48:   00812c23                sw      x8,24(x2)
+  4c:   00912a23                sw      x9,20(x2)
+  50:   02010413                addi    x8,x2,32
+  54:   fea42623                sw      x10,-20(x8)
+  58:   fec42703                lw      x14,-20(x8)
+  5c:   00100793                addi    x15,x0,1
+  60:   00e7c663                blt     x15,x14,6c <.L4>
+  64:   00100793                addi    x15,x0,1
+  68:   0380006f                jal     x0,a0 <.L5>
+
+0000006c <.L4>:
+  6c:   fec42783                lw      x15,-20(x8)
+  70:   fff78793                addi    x15,x15,-1
+  74:   00078513                addi    x10,x15,0
+  78:   00000097                auipc   x1,0x0
+  7c:   fc8080e7                jalr    x1,-38(x1) # 78 <.L4+0xc>   //jmp fibb
+  80:   00050493                addi    x9,x10,0
+  84:   fec42783                lw      x15,-20(x8)
+  88:   ffe78793                addi    x15,x15,-2
+  8c:   00078513                addi    x10,x15,0
+  90:   00000097                auipc   x1,0x0
+  94:   fb0080e7                jalr    x1,-50(x1) # 90 <.L4+0x24>   //jmp fibb
+  98:   00050793                addi    x15,x10,0
+  9c:   00f487b3                add     x15,x9,x15
+
+000000a0 <.L5>:
+  a0:   00078513                addi    x10,x15,0
+  a4:   01c12083                lw      x1,28(x2)
+  a8:   01812403                lw      x8,24(x2)
+  ac:   01412483                lw      x9,20(x2)
+  b0:   02010113                addi    x2,x2,32
+  b4:   00008067                jalr    x0,0(x1)
