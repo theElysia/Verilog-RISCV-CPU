@@ -26,7 +26,7 @@
 通过Switch设置工作频率以及单步调试，单步调试模式下通过按Button步进。7段数码管显示当前周期数。VGA显示情况如下：
 
 <p align = "center">    
-<img  src="D:\Code_Files\Xilinx\tmp1\VGA\screenshot.png" width="300" />
+<img  src="https://github.com/theElysia/Verilog-RISCV-CPU/blob/main/VGA/screenshot.png"/>
 </p>
 
 ***
